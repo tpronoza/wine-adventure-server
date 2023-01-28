@@ -1,0 +1,37 @@
+[
+    {
+        "model": "wineadventureapi.Category",
+        "PK": 1,
+        "fields": {
+            "label": "Red"
+        }
+    },
+    {
+        "model": "wineadventureapi.Category",
+        "PK": 2,
+        "fields": {
+            "label": "White"
+        }
+    },
+    {
+        "model": "wineadventureapi.Category",
+        "PK": 3,
+        "fields": {
+            "label": "Rose"
+        }
+    },
+    {
+        "model": "wineadventureapi.Category",
+        "PK": 4,
+        "fields": {
+            "label": "Sparkling"
+        }
+    },
+    {
+      "model": "wineadventureapi.Category",
+      "PK": 5,
+      "fields": {
+          "label": "Dessert"
+      }
+  }
+]
