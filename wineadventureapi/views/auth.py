@@ -23,11 +23,8 @@ def check_user(request):
             'uid': user.uid,
             'first_name': user.first_name,
             'last_name': user.last_name,
-            'bio': user.bio,
             'profile_image_url': user.profile_image_url,
             'email': user.email,
-            'created_on': user.created_on,
-            'active': user.active
         }
         return Response(data)
     except:
@@ -46,23 +43,17 @@ def register_user(request):
         uid=request.data['uid'],
         first_name=request.data['first_name'],
         last_name=request.data['last_name'],
-        bio=request.data['bio'],
         profile_image_url=request.data['profile_image_url'],
         email=request.data['email'],
-        created_on=request.data['created_on'],
-        active=request.data['active']
     )
 
     # Return the user info to the client
     data = {
             'id': user.id,
             'uid': user.uid,
-            'first_name': user.bio,
+            'first_name': user.first_name,
             'last_name': user.last_name,
-            'bio': user.bio,
             'profile_image_url': user.profile_image_url,
             'email': user.email,
-            'created_on': user.created_on,
-            'active': user.active
     }
     return Response(data)

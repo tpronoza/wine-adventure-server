@@ -1,5 +1,7 @@
 
 from django.db import models
+from .profile import Profile
+from .winery import Winery
 
 class Wine(models.Model):
 
@@ -14,3 +16,5 @@ class Wine(models.Model):
     wine_list = models.BooleanField(default=False)
     uid = models.CharField(max_length=100)
     country_name = models.CharField(max_length=100)
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    winery = models.ForeignKey(Winery, on_delete=models.CASCADE)
