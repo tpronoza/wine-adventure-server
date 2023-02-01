@@ -1,0 +1,17 @@
+[
+  {
+      "model": "wineadventureapi.Profile",
+      "PK": 1,
+      "fields": {
+          "first_name": "Taty",
+          "last_name": "Taty",
+          "profile_image": "Taty",
+          "about_me": "love red wine",
+          "favorite": true,
+          "wish_list": true,
+          "my_wines_list": true,
+          "uid": 1,
+          "user": 1
+      }
+  }
+]

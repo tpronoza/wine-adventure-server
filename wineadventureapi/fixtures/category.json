@@ -3,35 +3,35 @@
         "model": "wineadventureapi.Category",
         "PK": 1,
         "fields": {
-            "label": "Red"
+            "category_name": "Red"
         }
     },
     {
         "model": "wineadventureapi.Category",
         "PK": 2,
         "fields": {
-            "label": "White"
+            "category_name": "White"
         }
     },
     {
         "model": "wineadventureapi.Category",
         "PK": 3,
         "fields": {
-            "label": "Rose"
+            "category_name": "Rose"
         }
     },
     {
         "model": "wineadventureapi.Category",
         "PK": 4,
         "fields": {
-            "label": "Sparkling"
+            "category_name": "Sparkling"
         }
     },
     {
       "model": "wineadventureapi.Category",
       "PK": 5,
       "fields": {
-          "label": "Dessert"
+          "category_name": "Dessert"
       }
   }
 ]

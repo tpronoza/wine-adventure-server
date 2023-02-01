@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from wineadventureapi.models import Wine, User
+from wineadventureapi.models import Wine,Wine_Category, Category, User
 
 class WineView(ViewSet):
 
@@ -16,7 +16,7 @@ class WineView(ViewSet):
         return Response(serializer.data)
 
     def create(self, request):
-        user = User.objects.get(pk=request.data["user_id"])
+        user = User.objects.get(uid=request.data["uid"])
 
         wine = Wine.objects.create(
             wine_name=request.data["wine_name"],
@@ -32,12 +32,15 @@ class WineView(ViewSet):
             uid=request.data["uid"],
             # user=user
         )
+        for id in request.data["winecategory"]:
+            category_id = Category.objects.get(pk=id)
+            Wine_Category.obectes.create(category_id=category_id, wine_id = wine)
         serializer = WineSerializer(wine)
         return Response(serializer.data)
 
     def update(self, request, pk):
 
-        user = User.objects.get(pk=request.data["user_id"])
+        user = User.objects.get(uid=request.data["uid"])
 
         wine = Wine.objects.get(pk=pk)
         wine.wine_name=request.data["wine_name"]
@@ -60,8 +63,13 @@ class WineView(ViewSet):
         wine.delete()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
 
-class WineSerializer(serializers.ModelSerializer):
+class WineCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Wine_Category
+        depth = 1
+        fields = ('category_id', 'wine_id')
 
+class WineSerializer(serializers.ModelSerializer):
     class Meta:
         model = Wine
         fields = ('id', 'wine_name', 'year_produced', 'wine_picture', 'description', 'wine_type', 'price', 'favorite', 'wish_list', 'wine_list', 'country_name', 'uid')
