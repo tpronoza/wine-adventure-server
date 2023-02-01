@@ -6,4 +6,4 @@ from .user import User
 from .wine_category import Wine_Category
 from .wine import Wine
 from .wine101 import Wine101
-from .winery import Winery
+# from .winery import Winery

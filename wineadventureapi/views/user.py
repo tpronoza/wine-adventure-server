@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
-from.user import User
+from wineadventureapi.models import User
 
 class UserView(ViewSet):
 

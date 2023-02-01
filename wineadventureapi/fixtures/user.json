@@ -1,0 +1,10 @@
+[
+  {
+      "model": "wineadventureapi.User",
+      "PK": 1,
+      "fields": {
+          "uid": 1,
+          "user_name": "TatyTaty"
+      }
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+        "model": "wineadventureapi.Wine_Category",
+        "PK": 1,
+        "fields": {
+            "category_id": 1,
+            "wine_id": 1
+        }
+  }
+]

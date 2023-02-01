@@ -1,10 +1,11 @@
 
 from django.db import models
-from .profile import Profile
-from .winery import Winery
+from .user import User
 
 class Wine(models.Model):
 
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # winery_name =  models.CharField(max_length=100)
     wine_name = models.CharField(max_length=100)
     year_produced = models.CharField(max_length=50)
     wine_picture = models.CharField(max_length=100)
@@ -16,5 +17,7 @@ class Wine(models.Model):
     wine_list = models.BooleanField(default=False)
     uid = models.CharField(max_length=100)
     country_name = models.CharField(max_length=100)
-    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    winery = models.ForeignKey(Winery, on_delete=models.CASCADE)
+    @property
+    def winecategory(self):
+        winecategory = [categories for categories in self.winecat.all()]
+        return winecategory
