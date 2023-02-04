@@ -16,7 +16,7 @@ class Wine101View(ViewSet):
         return Response(serializer.data)
 
     def create(self, request):
-        user = User.objects.get(pk=request.data["user_id"])
+        user = User.objects.get(pk=request.data["id"])
 
         wine101 = Wine101.objects.create(
             article_name=request.data["article_name"],
@@ -30,7 +30,7 @@ class Wine101View(ViewSet):
 
     def update(self, request, pk):
 
-        user = User.objects.get(pk=request.data["user_id"])
+        user = User.objects.get(pk=request.data["id"])
 
         wine101 = Wine101.objects.get(pk=pk)
         wine101.article_name=request.data["article_name"]

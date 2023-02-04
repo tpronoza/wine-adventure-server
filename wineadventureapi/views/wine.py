@@ -16,7 +16,8 @@ class WineView(ViewSet):
         return Response(serializer.data)
 
     def create(self, request):
-        user = User.objects.get(pk=request.data["user"])
+        user = User.objects.get(id=request.data["user_id"])
+        # category = Category.objects.get(id=request.data["category_id"])
 
         wine = Wine.objects.create(
             wine_name=request.data["wine_name"],
@@ -29,7 +30,8 @@ class WineView(ViewSet):
             wish_list=request.data["wish_list"],
             wine_list=request.data["wine_list"],
             country_name=request.data["country_name"],
-            user=user
+            user_id=user,
+            # category_id=category
         )
         for id in request.data["winecategory"]:
             category_id = Category.objects.get(pk=id)
@@ -39,9 +41,10 @@ class WineView(ViewSet):
 
     def update(self, request, pk):
 
-        user = User.objects.get(pk=request.data["user"])
+        # user = User.objects.get(uid=request.data["uid"])
 
         wine = Wine.objects.get(pk=pk)
+        wine.user_id = User.objects.get(id=request.data["user_id"])
         wine.wine_name=request.data["wine_name"]
         wine.year_produced=request.data["year_produced"]
         wine.wine_picture=request.data["wine_picture"]
@@ -52,7 +55,7 @@ class WineView(ViewSet):
         wine.wish_list=request.data["wish_list"]
         wine.wine_list=request.data["wine_list"]
         wine.country_name=request.data["country_name"]
-        wine.user=user
+        # wine.user=user
         wine.save()
 
         return Response(None, status=status.HTTP_204_NO_CONTENT)
@@ -66,10 +69,10 @@ class WineCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Wine_Category
         depth = 1
-        fields = ('category_id', 'wine_id')
+        fields = ('id', 'category_id', 'wine_id')
 
 class WineSerializer(serializers.ModelSerializer):
     class Meta:
         model = Wine
-        fields = ('id', 'wine_name', 'year_produced', 'wine_picture', 'description', 'wine_type', 'price', 'favorite', 'wish_list', 'wine_list', 'country_name', 'user')
+        fields = ('id', 'wine_name', 'year_produced', 'wine_picture', 'description', 'wine_type', 'price', 'favorite', 'wish_list', 'wine_list', 'country_name', 'user_id')
         depth = 1

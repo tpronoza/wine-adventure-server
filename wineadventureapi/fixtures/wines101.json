@@ -1,7 +1,18 @@
 [
   {
-    "model": "wineadventureapi.wine101",
+    "model": "wineadventureapi.Wine101",
     "pk": 1,
+    "fields": {
+      "article_name": "Wine Tasting Terms - All You Need To Know",
+      "context": "Wine tasting, like many other subjects, has its own vocabulary. On your next visit to wine country, why not ask for a chance to taste wine straight from the barrel? Though the tasting will be unlike anything you experience from a bottle, it will be fun and memorable. And members, remember your member benefit: Let us know when you are traveling to wine country so we can arrange a VIP Tasting for you. ",
+      "article_image": "https://cdn.shopify.com/s/files/1/0123/4459/0400/files/shutterstock_579707302_large.jpg?v=1559060477",
+      "article_link": "https://www.cawineclub.com/wine-tasting-terms",
+      "user": 1
+    }
+  },
+  {
+    "model": "wineadventureapi.Wine101",
+    "pk": 2,
     "fields": {
       "article_name": "Wine Tasting Terms - All You Need To Know",
       "context": "Wine tasting, like many other subjects, has its own vocabulary. On your next visit to wine country, why not ask for a chance to taste wine straight from the barrel? Though the tasting will be unlike anything you experience from a bottle, it will be fun and memorable. And members, remember your member benefit: Let us know when you are traveling to wine country so we can arrange a VIP Tasting for you. ",

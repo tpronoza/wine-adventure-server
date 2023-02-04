@@ -4,7 +4,7 @@ from .user import User
 
 class Wine(models.Model):
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     # winery_name =  models.CharField(max_length=100)
     wine_name = models.CharField(max_length=100)
     year_produced = models.CharField(max_length=50)
