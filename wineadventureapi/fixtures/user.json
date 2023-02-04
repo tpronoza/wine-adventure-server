@@ -3,7 +3,7 @@
       "model": "wineadventureapi.User",
       "PK": 1,
       "fields": {
-          "uid": 1,
+          "uid": "2qYJO5aTOvZTURupchEOWfUkr1Y2",
           "user_name": "TatyTaty"
       }
   }

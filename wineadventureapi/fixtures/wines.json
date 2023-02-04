@@ -1,11 +1,27 @@
 [
   {
-    "model": "wineadventureapi.wine",
+    "model": "wineadventureapi.Wine",
     "pk": 1,
     "fields": {
-      "user": 1,
-      "category": 1,
+      "user_id": 1,
       "wine_name": "Sinner's Select Red",
+      "country_name": "United States",
+      "year_produced": "2018",
+      "wine_picture": "https://cdn11.bigcommerce.com/s-hg93lnuu9r/images/stencil/608x608/products/18067/18855/the-7-deadly-lodi-red__26682.1661941332.jpg?c=2",
+      "description": "The 2018 7 Deadly® Red is a sinners delight. A deep ruby color with tempting aromas of cranberry, ripe cherry, leather and a whiff of BBQ smoke. The seduction continues with flavors of blackberry, smashed plum and notes of black pepper which lead to a lingering, jammy finish with a kiss of spice.",
+      "wine_type": "Blend",
+      "price": "9.99",
+      "favorite": false,
+      "wish_list": true,
+      "wine_list": false
+    }
+  },
+  {
+    "model": "wineadventureapi.Wine",
+    "pk": 2,
+    "fields": {
+      "user_id": 1,
+      "wine_name": "SSSSinner's Select Red",
       "country_name": "United States",
       "year_produced": "2018",
       "wine_picture": "https://cdn11.bigcommerce.com/s-hg93lnuu9r/images/stencil/608x608/products/18067/18855/the-7-deadly-lodi-red__26682.1661941332.jpg?c=2",

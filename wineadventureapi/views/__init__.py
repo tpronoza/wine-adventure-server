@@ -5,4 +5,5 @@ from .country import CountryView
 from .user import UserView
 from .wine import WineView
 from .wine101 import Wine101View
+from .wine_category import WineCategoryView
 # from .winery import WineryView

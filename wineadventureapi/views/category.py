@@ -19,27 +19,6 @@ class CategoryView(ViewSet):
         serializer = CategoriesSerializer(categories, many=True)
         return Response(serializer.data)
 
-    def create(self, request):
-
-        category = Category.objects.create(
-            category_name=request.data["category_name"]
-        )
-        serializer = CategoriesSerializer(category)
-        return Response(serializer.data)
-
-    def update(self, request, pk):
-
-        category = Category.objects.get(pk=pk)
-        category.category_name = request.data["category_name"]
-        category.save()
-
-        return Response(None, status=status.HTTP_204_NO_CONTENT)
-
-    def destroy(self, request, pk):
-        category = Category.objects.get(pk=pk)
-        category.delete()
-        return Response(None, status=status.HTTP_204_NO_CONTENT)
-
 class CategoriesSerializer(serializers.ModelSerializer):
 
     class Meta:

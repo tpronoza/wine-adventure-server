@@ -10,7 +10,7 @@
           "favorite": true,
           "wish_list": true,
           "my_wines_list": true,
-          "user": 1
+          "uid": 1
       }
   }
 ]
